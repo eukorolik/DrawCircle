@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/Lab5.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="652 675">
+    <action-group name="Default">
+      <action id="InputAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Input</property>
+        <property name="ShortLabel" translatable="yes">Input</property>
+        <signal name="Activated" handler="OnInputActionActivated" />
+      </action>
+      <action id="CalcAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Calc</property>
+        <property name="ShortLabel" translatable="yes">Calc</property>
+        <signal name="Activated" handler="OnCalcActionActivated" />
+      </action>
+      <action id="DrawAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Draw</property>
+        <property name="ShortLabel" translatable="yes">Draw</property>
+        <signal name="Activated" handler="OnDrawActionActivated" />
+      </action>
+      <action id="ExitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+        <signal name="Activated" handler="OnExitActionActivated" />
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <property name="WidthRequest">550</property>
+            <node name="menubar1" type="Menubar">
+              <node type="Menu" action="InputAction" />
+              <node type="Menu" action="CalcAction" />
+              <node type="Menu" action="DrawAction" />
+              <node type="Menu" action="ExitAction" />
+            </node>
+          </widget>
+          <packing>
+            <property name="X">13</property>
+            <property name="Y">8</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.DrawingArea" id="Area">
+            <property name="MemberName" />
+            <property name="WidthRequest">600</property>
+            <property name="HeightRequest">600</property>
+          </widget>
+          <packing>
+            <property name="X">20</property>
+            <property name="Y">40</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Dialog" id="Lab5.CircleSettings" design-size="388 146">
+    <property name="MemberName" />
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="DestroyWithParent">True</property>
+    <property name="Buttons">2</property>
+    <property name="HelpButton">False</property>
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog1_VBox">
+        <property name="MemberName" />
+        <property name="BorderWidth">2</property>
+        <child>
+          <widget class="Gtk.Fixed" id="fixed2">
+            <property name="MemberName" />
+            <property name="HasWindow">False</property>
+            <child>
+              <widget class="Gtk.Entry" id="Radius">
+                <property name="MemberName" />
+                <property name="WidthRequest">300</property>
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="X">65</property>
+                <property name="Y">3</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="Label">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Радиус</property>
+              </widget>
+              <packing>
+                <property name="X">13</property>
+                <property name="Y">6</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.CheckButton" id="Square">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Label" translatable="yes">Площадь</property>
+                <property name="DrawIndicator">True</property>
+                <property name="HasLabel">True</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="X">13</property>
+                <property name="Y">41</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.CheckButton" id="Length">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Label" translatable="yes">Длина</property>
+                <property name="DrawIndicator">True</property>
+                <property name="HasLabel">True</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="X">115</property>
+                <property name="Y">41</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="dialog1_ActionArea">
+        <property name="MemberName" />
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">5</property>
+        <property name="Size">2</property>
+        <property name="LayoutStyle">End</property>
+        <child>
+          <widget class="Gtk.Button" id="buttonCancel">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-cancel</property>
+            <property name="ResponseId">-6</property>
+            <property name="label">gtk-cancel</property>
+          </widget>
+          <packing>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="buttonOk">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-ok</property>
+            <property name="ResponseId">-5</property>
+            <signal name="Pressed" handler="OnButtonOkPressed" />
+            <property name="label">gtk-ok</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Dialog" id="Lab5.Calc" design-size="222 133">
+    <property name="MemberName" />
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Buttons">1</property>
+    <property name="HelpButton">False</property>
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog1_VBox">
+        <property name="MemberName" />
+        <property name="BorderWidth">2</property>
+        <child>
+          <widget class="Gtk.Fixed" id="fixed1">
+            <property name="MemberName" />
+            <property name="HasWindow">False</property>
+            <child>
+              <widget class="Gtk.Label" id="SquareLabel">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Площадь =</property>
+              </widget>
+              <packing>
+                <property name="X">7</property>
+                <property name="Y">6</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="LengthLabel">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Длина =</property>
+              </widget>
+              <packing>
+                <property name="X">25</property>
+                <property name="Y">24</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="Square">
+                <property name="MemberName" />
+                <property name="Visible">False</property>
+                <property name="LabelProp" translatable="yes">123</property>
+              </widget>
+              <packing>
+                <property name="X">74</property>
+                <property name="Y">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="Length">
+                <property name="MemberName" />
+                <property name="Visible">False</property>
+                <property name="LabelProp" translatable="yes">123</property>
+              </widget>
+              <packing>
+                <property name="X">74</property>
+                <property name="Y">25</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="dialog1_ActionArea">
+        <property name="MemberName" />
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">5</property>
+        <property name="Size">1</property>
+        <property name="LayoutStyle">End</property>
+        <child>
+          <widget class="Gtk.Button" id="buttonCancel">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-ok</property>
+            <property name="ResponseId">-5</property>
+            <property name="label">gtk-ok</property>
+          </widget>
+          <packing>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Dialog" id="Exception" design-size="428 401">
+    <property name="MemberName" />
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Buttons">1</property>
+    <property name="HelpButton">False</property>
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog1_VBox">
+        <property name="MemberName" />
+        <property name="BorderWidth">2</property>
+        <child>
+          <widget class="Gtk.Fixed" id="fixed1">
+            <property name="MemberName" />
+            <property name="HasWindow">False</property>
+            <child>
+              <widget class="Gtk.Label" id="Exe">
+                <property name="MemberName" />
+                <property name="WidthRequest">400</property>
+                <property name="HeightRequest">50</property>
+                <property name="LabelProp" translatable="yes">Сообщение</property>
+                <property name="Wrap">True</property>
+              </widget>
+              <packing>
+                <property name="X">17</property>
+                <property name="Y">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Image" id="image1">
+                <property name="MemberName" />
+                <property name="Pixbuf">file:.\icons\NO.png</property>
+              </widget>
+              <packing>
+                <property name="X">109</property>
+                <property name="Y">61</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="dialog1_ActionArea">
+        <property name="MemberName" />
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">5</property>
+        <property name="Size">1</property>
+        <property name="LayoutStyle">End</property>
+        <child>
+          <widget class="Gtk.Button" id="buttonCancel">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-ok</property>
+            <property name="ResponseId">-5</property>
+            <property name="label">gtk-ok</property>
+          </widget>
+          <packing>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
